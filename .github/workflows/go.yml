@@ -27,8 +27,10 @@ jobs:
           path: './plantuml'
       - name: run go stuff
         run: |
+            echo "MAIN FOLDER"
             cd ./mainrepo
             ls
+            echo "PLANTUML FOLDER"
             cd ../plantuml
             ls
             go mod tidy
