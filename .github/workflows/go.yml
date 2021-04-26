@@ -27,7 +27,6 @@ jobs:
       - name: run go stuff
         run: |
             cd ./plantuml
-            ls
             go mod tidy
             go run . generate -d ../mainrepo -r
             cp graph.puml ../mainrepo/graph.puml
