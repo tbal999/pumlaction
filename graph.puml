@@ -1,6 +1,6 @@
 @startuml
 package ...mainrepo.examples{
-class ExampleTwo {
+class Example {
 -thing1: string
 -thing2: string
 -thing3: string
@@ -10,7 +10,7 @@ class ExampleTwo {
 }
 }
 package ...mainrepo.examples{
-class Example {
+class ExampleTwo {
 -thing1: string
 -thing2: string
 -thing3: string
