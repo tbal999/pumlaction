@@ -50,7 +50,6 @@ jobs:
             git push
             echo "END"
       - name: Trigger next workflow
-        if: success()
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.REPO_GHA_PAT }}
