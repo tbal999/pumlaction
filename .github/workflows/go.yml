@@ -37,13 +37,9 @@ jobs:
             echo "COPY..."
             cp graph.puml ../mainrepo
             cd ../mainrepo
-            ls
-      - name: Push Local Changes
-        uses:  stefanzweifel/git-auto-commit-action@v4.1.2 
-        with: 
-          commit_user_name: "my user name"
-          commit_user_email: "me@email.org"
-          commit_author: "My User <me@email.org>"
-          commit_message: "Generate PNG images for PlantUML diagrams" 
-          branch: ${{ github.head_ref }}
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add graph.puml
+            git commit -m "generated"
+            git push
 
