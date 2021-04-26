@@ -31,13 +31,9 @@ jobs:
           path: './plantuml'
       - name: create puml file
         run: |
-            echo "START GO STUFF"
             cd ./plantuml
             go mod tidy
             go run . generate -d ../mainrepo -r
-            echo "CHECK FOR GRAPH.PUML"
-            ls -l | grep ".puml"
-            echo "COPY..."
             cp graph.puml ../mainrepo/graph.puml
             cd ../mainrepo
             git config user.name github-actions
@@ -46,7 +42,6 @@ jobs:
             git add graph.puml
             git diff-index --quiet HEAD || git commit -m "generated puml file"
             git push
-            echo "END"
   diagrams:
     needs: puml
     runs-on: ubuntu-latest
@@ -61,11 +56,11 @@ jobs:
         uses: cloudbees/plantuml-github-action@master
         with:
             args: -v -tpng graph.puml
-      - name: Push Local Changes
-        uses:  stefanzweifel/git-auto-commit-action@v4.1.2 
-        with: 
-          commit_user_name: "github-actions"
-          commit_user_email: "github-actions@github.com"
-          commit_author: "github-actions <github-actions@github.com>"
-          commit_message: "Generate PNG image for PlantUML diagrams" 
-          branch: ${{ github.head_ref }}
+      - name: push diagram
+        run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git pull
+            git add graph.png
+            git diff-index --quiet HEAD || git commit -m "generated puml png"
+            git push
