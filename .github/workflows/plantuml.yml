@@ -37,11 +37,12 @@ jobs:
             echo "CHECK FOR GRAPH.PUML"
             ls -l | grep ".puml"
             echo "COPY..."
-            cp graph.puml ../mainrepo
+            currentDate=`date`
+            cp graph.puml ../mainrepo/$currentDate.puml
             cd ../mainrepo
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git add graph.puml
+            git add $currentDate.puml
             git commit -m "generated"
             git push
       - name: Checkout Source 
