@@ -34,12 +34,10 @@ jobs:
             go run . generate -d ../mainrepo -r
             echo "CHECK FOR GRAPH.PUML"
             ls -l | grep ".puml"
-            cp graph.puml ../mainrepo/graph.puml
             echo "GIT..."
-            git add ../mainrepo/graph.puml
-            cd .
-            ls
-            
-            ls
+            git add graph.puml
+            git commit -m "puml file created"
+            git push origin master
+          
 
 
