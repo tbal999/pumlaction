@@ -17,3 +17,8 @@ func (example Example) sayBye() {
 	fmt.Println("bye")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
+
+func (example Example) sayWhy() {
+	fmt.Println("why")
+	fmt.Println(example.thing1, example.thing2, example.thing3)
+}
