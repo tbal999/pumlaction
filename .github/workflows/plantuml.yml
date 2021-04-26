@@ -31,7 +31,7 @@ jobs:
         with:
           repository: bykof/go-plantuml
           path: './plantuml'
-      - name: run go stuff
+      - name: create puml file
         run: |
             echo "START GO STUFF"
             cd ./plantuml
