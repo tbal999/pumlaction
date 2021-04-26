@@ -22,3 +22,8 @@ func (example Example) sayWhy() {
 	fmt.Println("why")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
+
+func (example Example) sayAgain() {
+	fmt.Println("again?")
+	fmt.Println(example.thing1, example.thing2, example.thing3)
+}
