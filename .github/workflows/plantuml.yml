@@ -54,8 +54,9 @@ jobs:
         uses: cloudbees/plantuml-github-action@master
         with:
             args: -v -tpng graph.puml
-      - name: push diagram
+      - name: sleep 1m then push diagram
         run: |
+            sleep 1m
             git config user.name github-actions
             git config user.email github-actions@github.com
             git pull
