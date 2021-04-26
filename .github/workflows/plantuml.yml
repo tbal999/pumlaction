@@ -43,13 +43,10 @@ jobs:
             cd ../mainrepo
             git config user.name github-actions
             git config user.email github-actions@github.com
+            git pull
             git add $currentDate.puml
             git commit -m "generated"
             git push
-      - name: Checkout Source 
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Get changed UML files
         id: getfile
         run: |
