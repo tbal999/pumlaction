@@ -1,4 +1,4 @@
-name: Generate plantuml files
+name: Generate plantuml files (.puml)
 
 on:
   push:
