@@ -1,0 +1,11 @@
+@startuml
+package ...mainrepo.examples{
+class Example {
+-thing1: string
+-thing2: string
+-thing3: string
+-sayHi(): 
+}
+}
+
+@enduml
