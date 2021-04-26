@@ -32,8 +32,7 @@ jobs:
             go mod tidy
             go run . generate -d ../mainrepo -r
             cp graph.puml ../mainrepo/graph.puml
-            cd ../mainrepo
-            git commit -m "plantuml graph generated" graph.puml
+            git branch --list
         shell: bash
 
 
