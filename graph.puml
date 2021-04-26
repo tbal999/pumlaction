@@ -7,6 +7,7 @@ class Example {
 -sayHi(): 
 -sayBye(): 
 -sayWhy(): 
+-sayAgain(): 
 }
 }
 
