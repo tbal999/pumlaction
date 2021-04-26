@@ -31,10 +31,9 @@ jobs:
             go mod tidy
             go run . generate -d ../mainrepo -r
             cp graph.puml ../mainrepo/graph.puml
-            git status
             git add ../mainrepo/graph.puml
-            git status
-            git commit -m 'testing'
+            cd .
+            ls
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
