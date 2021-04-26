@@ -20,7 +20,7 @@ class ExampleTwo {
 }
 }
 package ...mainrepo.examples{
-class ExampleThree {
+class ExampleThr {
 -thing1: string
 -thing2: string
 -thing3: string
