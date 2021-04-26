@@ -12,3 +12,8 @@ func (example Example) sayHi() {
 	fmt.Println("hello")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
+
+func (example Example) sayBye() {
+	fmt.Println("bye")
+	fmt.Println(example.thing1, example.thing2, example.thing3)
+}
