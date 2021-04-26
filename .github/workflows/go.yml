@@ -12,9 +12,16 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Source 
+      - name: checkout source
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
-      - name: Generate PNG Diagrams
-        uses: tbal999/go-plantuml@3
+          path: './mainrepo'
+      - name: checkout plantuml
+        uses: actions/checkout@v2
+        with:
+          repository: bykof/go-plantuml
+          path: './plantuml'
+          run: go run ./plantuml/main.go -d ../mainrepo -r
+          shell: bash
+
+
