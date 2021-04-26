@@ -27,6 +27,7 @@ jobs:
           repository: bykof/go-plantuml
           path: './plantuml'
       - name: run go stuff
+        uses: actions/checkout@v2
         run: |
             echo "START GO STUFF"
             cd ./plantuml
@@ -37,7 +38,8 @@ jobs:
             echo "GIT..."
             git config --global user.email "action@github.com"
             git config --global user.name "action man"
-            git add graph.puml
+            cd ../mainrepo
+            git add ../plantuml/graph.puml
             git commit -m "puml file created"
             git push origin master
           
