@@ -17,4 +17,4 @@ jobs:
         with:
           fetch-depth: 0
       - name: Generate PNG Diagrams
-        uses: tbal999/go-plantuml@2
+        uses: tbal999/go-plantuml@3
