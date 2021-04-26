@@ -37,10 +37,13 @@ jobs:
             echo "GIT..."
             git config --global user.email "action@github.com"
             git config --global user.name "action man"
-            cd ../mainrepo
-            git add ../plantuml/graph.puml
-            git commit -m "puml file created"
-            git push origin master
+            cd .
+            ls
+            
+            
+      #git add ../plantuml/graph.puml
+      #git commit -m "puml file created"
+      #git push origin master
           
 
 
