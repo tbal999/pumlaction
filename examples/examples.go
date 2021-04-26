@@ -23,7 +23,23 @@ func (example Example) sayWhy() {
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
 
-func (example Example) sayAgain() {
-	fmt.Println("again?")
+type ExampleTwo struct {
+	thing1 string
+	thing2 string
+	thing3 string
+}
+
+func (example ExampleTwo) sayHi() {
+	fmt.Println("hello")
+	fmt.Println(example.thing1, example.thing2, example.thing3)
+}
+
+func (example ExampleTwo) sayBye() {
+	fmt.Println("bye")
+	fmt.Println(example.thing1, example.thing2, example.thing3)
+}
+
+func (example ExampleTwo) sayWhy() {
+	fmt.Println("why")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
