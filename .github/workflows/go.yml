@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: './mainrepo'
+          fetch-depth: 0
       - name: checkoutplantuml
         uses: actions/checkout@v2
         with:
@@ -34,7 +35,10 @@ jobs:
             git add ../mainrepo/graph.puml
             git status
             git commit -m 'testing'
-            git push origin master
-        shell: bash
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ github.ref }}
+          shell: bash
 
 
