@@ -31,7 +31,7 @@ jobs:
             ls
             go mod tidy
             go run . generate -d ../mainrepo -r
-            cp graph.puml .
+            cp graph.puml ../mainrepo/graph.puml
         shell: bash
 
 
