@@ -1,7 +1,7 @@
 name: Generate plantuml files (.puml)
 
 #TODO
-#Line 41 - need to set that as a constant so the date var doesn't change.
+#create composite action for puml job
 
 on:
   push:
