@@ -27,7 +27,6 @@ jobs:
           repository: bykof/go-plantuml
           path: './plantuml'
       - name: run go stuff
-        uses: actions/checkout@v2
         run: |
             echo "START GO STUFF"
             cd ./plantuml
