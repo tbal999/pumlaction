@@ -40,6 +40,6 @@ jobs:
           commit_user_email: "me@email.org"
           commit_author: "My User <me@email.org>"
           commit_message: "blah" 
-          branch: ${{ github.head_ref }}
+          branch: master
 
 
