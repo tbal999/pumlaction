@@ -26,7 +26,10 @@ jobs:
           repository: bykof/go-plantuml
           path: './plantuml'
       - name: run go stuff
-        run: go run ./plantuml/main.go -d ../mainrepo -r
+        run: |
+            cd ./plantuml
+            go mod tidy
+            go run . -d ../mainrepo -r
         shell: bash
 
 
