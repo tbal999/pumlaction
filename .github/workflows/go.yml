@@ -6,7 +6,6 @@ on:
       - puml**
     branches:
       - master
-      - main
   pull_request:
 jobs:
   ci:
@@ -32,7 +31,11 @@ jobs:
             go mod tidy
             go run . generate -d ../mainrepo -r
             cp graph.puml ../mainrepo/graph.puml
-            git branch --list
+            git status
+            git add ../mainrepo/graph.puml
+            git status
+            git commit -m 'testing'
+            git push origin master
         shell: bash
 
 
