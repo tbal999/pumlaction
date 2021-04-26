@@ -5,6 +5,7 @@ class Example {
 -thing2: string
 -thing3: string
 -sayHi(): 
+-sayBye(): 
 }
 }
 
