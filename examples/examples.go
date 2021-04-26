@@ -44,28 +44,28 @@ func (example ExampleTwo) sayWhy() {
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
 
-type ExampleThree struct {
+type ExampleThr struct {
 	thing1 string
 	thing2 string
 	thing3 string
 }
 
-func (example ExampleThree) sayHi() {
+func (example ExampleThr) sayHi() {
 	fmt.Println("hello")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
 
-func (example ExampleThree) sayBye() {
+func (example ExampleThr) sayBye() {
 	fmt.Println("bye")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
 
-func (example ExampleThree) sayWhy() {
+func (example ExampleThr) sayWhy() {
 	fmt.Println("why")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
 
-func (example ExampleThree) sayAgain() {
+func (example ExampleThr) sayAgain() {
 	fmt.Println("again?")
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
