@@ -33,5 +33,13 @@ jobs:
             go run . generate -d ../mainrepo -r
             cp graph.puml ../mainrepo/graph.puml
         shell: bash
+      - name: push local changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with: 
+          commit_user_name: "my user name"
+          commit_user_email: "me@email.org"
+          commit_author: "My User <me@email.org>"
+          commit_message: "blah" 
+          branch: ${{ github.head_ref }}
 
 
