@@ -37,7 +37,7 @@ jobs:
             echo "GIT..."
             git config --global user.email "action@github.com"
             git config --global user.name "action man"
-            cd .
+            cd ./mainrepo
             ls
             
             
