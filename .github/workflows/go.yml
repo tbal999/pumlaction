@@ -35,10 +35,9 @@ jobs:
             echo "CHECK FOR GRAPH.PUML"
             ls -l | grep ".puml"
             echo "GIT..."
+            docker cp graph.puml ./graph.puml
             git config --global user.email "action@github.com"
             git config --global user.name "action man"
-            cd ./mainrepo
-            ls
             
             
       #git add ../plantuml/graph.puml
