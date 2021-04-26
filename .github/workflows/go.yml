@@ -35,6 +35,6 @@ jobs:
             echo "CHECK FOR GRAPH.PUML"
             ls -l | grep ".puml"
             echo "GIT..."
-            cp ./graph.puml ../mainrepo
+            cp graph.puml ../mainrepo
 
 
