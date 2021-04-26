@@ -19,5 +19,16 @@ class ExampleTwo {
 -sayWhy(): 
 }
 }
+package ...mainrepo.examples{
+class ExampleThree {
+-thing1: string
+-thing2: string
+-thing3: string
+-sayHi(): 
+-sayBye(): 
+-sayWhy(): 
+-sayAgain(): 
+}
+}
 
 @enduml
