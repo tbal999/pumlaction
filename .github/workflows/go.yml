@@ -30,6 +30,7 @@ jobs:
             cd ./plantuml
             go mod tidy
             go run . generate -d ../mainrepo -r
+            cp ./plantuml/graph.puml .
         shell: bash
 
 
