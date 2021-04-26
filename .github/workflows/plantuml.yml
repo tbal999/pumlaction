@@ -45,8 +45,6 @@ jobs:
   diagrams:
     needs: puml
     runs-on: ubuntu-latest
-    env:
-        UML_FILES: ".puml"
     steps:
       - name: Checkout Source
         uses: actions/checkout@v2
@@ -60,7 +58,6 @@ jobs:
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git pull
             git add graph.png
             git diff-index --quiet HEAD || git commit -m "generated puml png"
             git push
