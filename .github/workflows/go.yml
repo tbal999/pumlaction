@@ -27,15 +27,11 @@ jobs:
           path: './plantuml'
       - name: run go stuff
         run: |
-            echo "MAIN FOLDER"
-            cd ./mainrepo
-            ls
-            echo "PLANTUML FOLDER"
-            cd ../plantuml
+            cd ./plantuml
             ls
             go mod tidy
             go run . generate -d ../mainrepo -r
-            cp ./plantuml/graph.puml .
+            cp graph.puml .
         shell: bash
 
 
