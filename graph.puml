@@ -9,26 +9,5 @@ class Example {
 -sayWhy(): 
 }
 }
-package ...mainrepo.examples{
-class ExampleTwo {
--thing1: string
--thing2: string
--thing3: string
--sayHi(): 
--sayBye(): 
--sayWhy(): 
-}
-}
-package ...mainrepo.examples{
-class ExampleThr {
--thing1: string
--thing2: string
--thing3: string
--sayHi(): 
--sayBye(): 
--sayWhy(): 
--sayAgain(): 
-}
-}
 
 @enduml
