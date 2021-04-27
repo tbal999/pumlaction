@@ -5,8 +5,14 @@ class ExampleOne {
 -thing2: string
 -thing3: string
 -sayHi(): 
--sayBye(): 
--sayWhy(): 
+}
+}
+package ...mainrepo.examples{
+class ExampleTwo {
+-thing1: string
+-thing2: string
+-thing3: string
+-sayHi(): 
 }
 }
 
