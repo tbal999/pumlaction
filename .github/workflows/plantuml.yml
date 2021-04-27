@@ -34,7 +34,9 @@ jobs:
             cd ./plantuml
             go mod tidy
             go run . generate -d ../mainrepo -r
-            cp graph.puml ../mainrepo/graph.puml
+            rm ../mainrepo/graph.puml
+            rm ../mainrepo/graph.png
+            cp graph.puml ../mainrepo
       - name: generate puml png diagram
         uses: cloudbees/plantuml-github-action@master
         with:
@@ -45,7 +47,6 @@ jobs:
             git config user.name github-actions
             git config user.email github-actions@github.com
             git pull
-            git add graph.puml
-            git add graph.png
+            git add .
             git diff-index --quiet HEAD || git commit -m "generated puml & png image"
             git push
