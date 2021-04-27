@@ -38,8 +38,7 @@ jobs:
       - name: Generate PNG Diagrams
         uses: cloudbees/plantuml-github-action@master
         with:
-            path: './mainrepo'
-            args: -v -tpng graph.puml
+            args: -v -tpng ../mainrepo/graph.puml
       - name: pull & push
         run: |
             cd  ./mainrepo
