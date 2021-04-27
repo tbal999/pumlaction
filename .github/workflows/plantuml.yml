@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - '*'
-      #- main
-      #- master
   pull_request:
 jobs:
   puml:
@@ -17,14 +15,23 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: 1.15
-      - name: Checkout Source
+      - name: Branch details
+        shell: bash
+        run: |
+             echo Reserved for REPO_NAME=${GITHUB_REPOSITORY##*/}
+             echo GITHUB_REF=${GITHUB_REF}
+             echo EXTRACT_GITHUB_REF=${GITHUB_REF##*/}
+             echo EXTRACT_GITHUB_REF_HEADS=$(echo ${GITHUB_REF#refs/heads/})
+        id: extract_branch          
+      - name: Checkout branch
         uses: actions/checkout@v2
         with:
+          ref: ${GITHUB_REF##*/}
           path: './mainrepo'
           fetch-depth: 0
       - name: checkout plantuml
         uses: actions/checkout@v2
-        with:
+        with: 
           repository: bykof/go-plantuml
           path: './plantuml'
       - name: create puml file
@@ -48,9 +55,8 @@ jobs:
             cd  ./mainrepo
             git config user.name github-actions
             git config user.email github-actions@github.com
-            echo ${GITHUB_REF##*/}
-            git checkout ${GITHUB_REF##*/}
             git pull
-            git add .
+            git add graph.png
+            git add graph.puml
             git diff-index --quiet HEAD || git commit -m "generated puml & png image"
             git push
