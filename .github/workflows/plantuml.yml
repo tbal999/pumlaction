@@ -35,30 +35,17 @@ jobs:
             go mod tidy
             go run . generate -d ../mainrepo -r
             cp graph.puml ../mainrepo/graph.puml
-            cd ../mainrepo
+      - name: Generate PNG Diagrams
+        uses: cloudbees/plantuml-github-action@master
+        with:
+            path: './mainrepo'
+            args: -v -tpng graph.puml
+      - name: pull & push
+        run: |
+            cd  ./mainrepo
             git config user.name github-actions
             git config user.email github-actions@github.com
             git pull
             git add graph.puml
             git diff-index --quiet HEAD || git commit -m "generated puml file"
             git push
-  diagrams:
-    needs: puml
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Source
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Generate PNG Diagrams
-        uses: cloudbees/plantuml-github-action@master
-        with:
-            args: -v -tpng graph.puml
-      - name: Push Local Changes
-        uses:  stefanzweifel/git-auto-commit-action@v4.1.2 
-        with: 
-          commit_user_name: "my user name"
-          commit_user_email: "me@email.org"
-          commit_author: "My User <me@email.org>"
-          commit_message: "Generate PNG images for PlantUML diagrams" 
-          branch: ${{ github.head_ref }}
