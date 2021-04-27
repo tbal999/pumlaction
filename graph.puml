@@ -1,5 +1,16 @@
 @startuml
 package ...mainrepo.examples{
+class ExampleThr {
+-thing1: string
+-thing2: string
+-thing3: string
+-sayHi(): 
+-sayBye(): 
+-sayWhy(): 
+-sayAgain(): 
+}
+}
+package ...mainrepo.examples{
 class Example {
 -thing1: string
 -thing2: string
@@ -17,17 +28,6 @@ class ExampleTwo {
 -sayHi(): 
 -sayBye(): 
 -sayWhy(): 
-}
-}
-package ...mainrepo.examples{
-class ExampleThr {
--thing1: string
--thing2: string
--thing3: string
--sayHi(): 
--sayBye(): 
--sayWhy(): 
--sayAgain(): 
 }
 }
 
