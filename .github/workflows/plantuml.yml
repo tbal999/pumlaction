@@ -1,7 +1,6 @@
-name: Generate plantuml files (.puml)
+name: Generate plantuml files (.puml) & png diagram
 
-#TODO
-#create composite action for puml job
+#TODO: create composite or docker action for puml job (row 27-39)
 
 on:
   push:
@@ -34,8 +33,12 @@ jobs:
             cd ./plantuml
             go mod tidy
             go run . generate -d ../mainrepo -r
-            rm ../mainrepo/graph.puml
-            rm ../mainrepo/graph.png
+            if [ -f "../mainrepo/graph.puml" ] ; then
+              rm "../mainrepo/graph.puml"
+            fi
+            if [ -f "../mainrepo/graph.png" ] ; then
+              rm "../mainrepo/graph.png"
+            fi
             cp graph.puml ../mainrepo
       - name: generate puml png diagram
         uses: cloudbees/plantuml-github-action@master
@@ -46,6 +49,8 @@ jobs:
             cd  ./mainrepo
             git config user.name github-actions
             git config user.email github-actions@github.com
+            echo ${GITHUB_REF##*/}
+            git checkout ${GITHUB_REF##*/}
             git pull
             git add .
             git diff-index --quiet HEAD || git commit -m "generated puml & png image"
