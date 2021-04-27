@@ -5,8 +5,6 @@ name: Generate plantuml files (.puml)
 
 on:
   push:
-    tags:
-      - puml**
     branches:
       - master
       - main
