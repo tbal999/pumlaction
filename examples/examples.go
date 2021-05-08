@@ -30,7 +30,7 @@ func (example ExampleTwo) sayHi() {
 	fmt.Println(example.thing1, example.thing2, example.thing3)
 }
 
-func Hi(g geometry) {
-	g.sayHi()
+func sayHi(example Example) {
+	example.sayHi()
 }
 
