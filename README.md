@@ -1,3 +1,9 @@
+CURRENTLY ACTIVE STACKS FOR DEPLOYMENT:
+---
+PIPELINE DEV: storiq multitsk blablabla
+PIPELINE PROD: 
+---
+
 # umltest sdfsdfsd
 
 testing out using of multiple repo's in github actions with some bash magic to make things happen!
